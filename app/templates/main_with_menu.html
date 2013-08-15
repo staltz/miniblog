@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-lg-8">
+            {% block main_left_col %}{% endblock %}
+        </div>
+        <div class="col-lg-4">
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="/"><i class="icon-asterisk"></i> All posts</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"><i class="icon-tags"></i> Tags</a>
+                </li>
+            </ul>
+            <a href="#" class="authentication">Log in</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,98 @@
+
+@import url(http://fonts.googleapis.com/css?family=Squada+One);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+/* Pallete:
+ * #E6E2AF;
+ * #A7A37E;
+ * #EFECCA;
+ * #046380;
+ * #002F2F;
+ */
+
+body {
+    background-color: #EFECCA;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+a {
+    color: #046380;
+}
+a:hover, a:visited, a:active {
+    color: #002F2F;
+}
+
+
+.header {
+    background-color: #002F2F;
+    padding: 20px 0 20px;
+}
+h1.title {
+    margin: 0;
+}
+h1.title > a {
+    color: #EFECCA;
+    font-family: 'Squada One', cursive;
+    text-shadow: 0 2px 0 #A7A37E;
+}
+h1.title > a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+form.search {
+    margin-top: 5px;
+    text-align: right;
+    position: relative;
+}
+form.search input {
+    position: absolute;
+    left: 0;
+    right: 42px;
+    width: initial;
+}
+form.search .btn {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 40px;
+}
+
+
+.main {
+    margin-top: 20px;
+}
+
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+.menu-item a {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    background-color: #FFFFFF;
+    color: #046380;
+    font-size: 18px;
+    display: block;
+}
+.menu-item a:hover {
+    background-color: #046380;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.authentication {
+    float: right;
+}
+
+
+.post-card {
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0 3px 0 #E6E2AF;
+       -moz-box-shadow: 0 3px 0 #E6E2AF;
+            box-shadow: 0 3px 0 #E6E2AF;
+}
+.post-card h3 {
+    margin-top: 0;
+    font-weight: bold;
+}
