@@ -1,0 +1,15 @@
+
++ DONE Frontend draft
+- TODO Setup PostgreSQL and SQLAlchemy
+- TODO Basic post model
+- TODO Views: list posts and read posts
+- TODO Flask-Login
+- TODO Setup WTForms
+- TODO Admin can add blog posts
+- TODO First unit tests with pytest
+- TODO Admin can edit and delete posts
+- TODO More unit tests
+- TODO Admin can tag posts ## use my bootstrap tags js
+- TODO More unit tests
+- TODO Edit tags view
+- TODO More unit tests
