@@ -1,7 +1,7 @@
 
 + DONE Frontend draft
-- TODO Setup PostgreSQL and SQLAlchemy
-- TODO Basic post model
++ DONE Setup PostgreSQL and SQLAlchemy
++ DONE Basic post model
 - TODO Views: list posts and read posts
 - TODO Flask-Login
 - TODO Setup WTForms
