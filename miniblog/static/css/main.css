@@ -88,11 +88,20 @@ form.search .btn {
     background-color: #FFFFFF;
     padding: 10px;
     margin-bottom: 20px;
-    -webkit-box-shadow: 0 3px 0 #E6E2AF;
-       -moz-box-shadow: 0 3px 0 #E6E2AF;
-            box-shadow: 0 3px 0 #E6E2AF;
+    border-bottom: 3px solid #E6E2AF;
 }
 .post-card h3 {
     margin-top: 0;
     font-weight: bold;
+}
+
+
+.login-form {
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-bottom: 3px solid #E6E2AF;
+}
+.login-form .form-group {
+    margin-left: 0;
+    margin-right: 0;
 }

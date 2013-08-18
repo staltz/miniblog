@@ -1,20 +1,24 @@
 {% extends "base.html" %}
 
 {% block main %}
-    <div class="row">
-        <div class="col-lg-8">
-            {% block main_left_col %}{% endblock %}
-        </div>
-        <div class="col-lg-4">
-            <ul class="menu">
-                <li class="menu-item">
-                    <a href="/"><i class="icon-asterisk"></i> All posts</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#"><i class="icon-tags"></i> Tags</a>
-                </li>
-            </ul>
-            <a href="#" class="authentication">Log in</a>
-        </div>
+  <div class="row">
+    <div class="col-lg-8">
+      {% block main_left_col %}{% endblock %}
     </div>
+    <div class="col-lg-4">
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="/"><i class="icon-asterisk"></i> All posts</a>
+        </li>
+        <li class="menu-item">
+          <a href="#"><i class="icon-tags"></i> Tags</a>
+        </li>
+      </ul>
+      {% if current_user.is_authenticated() %}
+        You are logged in
+      {% else %}
+        <a href="{{ url_for('login') }}" class="authentication">Log in</a>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}

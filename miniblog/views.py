@@ -1,4 +1,3 @@
-
 from flask import render_template, request
 from miniblog import app
 from miniblog.models import Post
@@ -10,7 +9,7 @@ def index():
     return render_template('index.html', posts=posts)
 
 
-@app.route('/posts/<post_id>')
+@app.route('/posts/<int:post_id>')
 def view_post(post_id):
-    post = Post.query.filter_by(id=post_id).first()
+    post = Post.query.get(post_id)
     return render_template('post.html', post=post)
