@@ -2,10 +2,17 @@
 
 {% block main_left_col %}
     {% for post in posts %}
+        {% set post_url = url_for('view_post', post_id=post.id) %}
         <div class="post-card">
-            <h3><a href="#">{{ post.title }}</a></h3>
-            <p>{{ post.content }}</p>
-            <em>Read more...</em>
+            <h3>
+                <a href="{{ post_url }}">
+                    {{ post.title }}
+                </a>
+            </h3>
+            <p>{{ post.content|truncate(500) }}</p>
+            {% if post.content|length > 500 %}
+                <em><a href="{{ post_url }}">Read more...</a></em>
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}

@@ -2,7 +2,7 @@
 + DONE Frontend draft
 + DONE Setup PostgreSQL and SQLAlchemy
 + DONE Basic post model
-- TODO Views: list posts and read posts
++ DONE Views: list posts and read posts
 - TODO Flask-Login
 - TODO Setup WTForms
 - TODO Admin can add blog posts
@@ -14,3 +14,4 @@
 - TODO More unit tests
 - TODO Edit tags view
 - TODO More unit tests
+>>> 1.0

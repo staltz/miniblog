@@ -15,4 +15,4 @@ class Post(db.Model):
         self.pub_date = datetime.utcnow()
 
     def __repr__(self):
-        return '<Post %s>' % self.title
+        return '<Post "%s">' % self.title
