@@ -14,11 +14,18 @@ def load_user(id):
 def login():
     form = AdminForm()
     if request.method == 'POST':
-        form = AdminForm(request.POST)
+        form = AdminForm(request.form)
         if form.validate():
-            admin = Admin.query.filter_by(id=form.username.data).first()
-            login_user(admin)
-            return redirect(url_for('index'))
+            admin = Admin.query.filter_by(username=form.username.data).first()
+            if admin is None:
+                # TODO fill form.username with error
+                assert False
+            if admin.check_password(form.password.data):
+                login_user(admin)
+                return redirect(url_for('index'))
+            else:
+                # TODO fill form.password with error
+                assert False
     return render_template('login.html', form=form)
 
 
@@ -26,4 +33,4 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect('index')
+    return redirect(url_for('index'))

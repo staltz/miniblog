@@ -6,3 +6,4 @@ Flask-SQLAlchemy==1.0
 WTForms==1.0.4
 WTForms-Alchemy>=0.7
 passlib>=1.6.1
+ipython

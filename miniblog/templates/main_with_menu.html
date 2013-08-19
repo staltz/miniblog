@@ -15,7 +15,7 @@
         </li>
       </ul>
       {% if current_user.is_authenticated() %}
-        You are logged in
+        <a href="{{ url_for('logout') }}" class="authentication">Log out</a>
       {% else %}
         <a href="{{ url_for('login') }}" class="authentication">Log in</a>
       {% endif %}
