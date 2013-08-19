@@ -4,6 +4,7 @@
 + DONE Basic post model
 + DONE Views: list posts and read posts
 + DONE Flask-Login, WTForms-Alchemy, login page
+- TODO Try to use PasswordType for Admin model, again ## https://github.com/kvesteri/sqlalchemy-utils/issues/37
 - TODO Unit tests for login form errors
 	- Test some form errors
 	- Setup pytest
