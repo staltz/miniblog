@@ -9,6 +9,8 @@
     + Test some form errors
     + Setup pytest
     - tests directory
+        - `sys.path.insert(1, os.path.join(sys.path[0], '..'))`
+        - `import miniblog`...
     - Make unit tests
         - No username given => form error
         - Wrong password => form error
