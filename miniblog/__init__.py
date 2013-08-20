@@ -2,7 +2,10 @@ import os
 from flask import Flask, g
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
+import sqlalchemy as sa
+from sqlalchemy_utils import coercion_listener
 from miniblog.utils import set_db_env_var
+
 
 
 app = Flask(__name__)
@@ -12,6 +15,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['CSRF_ENABLED'] = True
 app.config['SECRET_KEY'] = 'should-be-confidential'
 db = SQLAlchemy(app)
+sa.event.listen(sa.orm.mapper, 'mapper_configured', coercion_listener)
 login_manager = LoginManager()
 login_manager.init_app(app)
 

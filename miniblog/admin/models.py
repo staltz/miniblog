@@ -1,5 +1,6 @@
 from werkzeug import generate_password_hash, check_password_hash
 from wtforms_alchemy import ModelForm
+from sqlalchemy_utils import PasswordType
 from wtforms import validators
 from wtforms.fields import PasswordField, TextField
 from miniblog import db
@@ -14,20 +15,16 @@ class Admin(db.Model):
         info={'label': "Username"}
     )
     password = db.Column(
-        db.String(66),
+        PasswordType(
+            schemes=['pbkdf2_sha512']
+        ),
         nullable=False,
         info={'label': "Password"}
     )
    
     def __init__(self, username, password):
         self.username = username
-        self.set_password(password)
-
-    def set_password(self, password):
-        self.password = generate_password_hash(password)
-   
-    def check_password(self, password):
-        return check_password_hash(self.password, password)
+        self.password = password
 
     def is_authenticated(self):
         return True
@@ -50,4 +47,4 @@ class AdminForm(ModelForm):
         model = Admin 
 
     username = TextField(validators=[validators.Required()])
-    password = PasswordField(validators=[validators.Required()])
+    #password = PasswordField(validators=[validators.Required()])

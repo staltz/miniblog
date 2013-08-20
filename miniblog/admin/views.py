@@ -20,7 +20,7 @@ def login():
             if admin is None:
                 # TODO fill form.username with error
                 assert False
-            if admin.check_password(form.password.data):
+            if admin.password == form.password.data:
                 login_user(admin)
                 return redirect(url_for('index'))
             else:
