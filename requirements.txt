@@ -6,5 +6,6 @@ Flask-SQLAlchemy==1.0
 WTForms==1.0.4
 WTForms-Alchemy>=0.7
 passlib>=1.6.1
+pytest==2.3.5
 ipython
 git+git://github.com/kvesteri/sqlalchemy-utils.git@94db2542aec8e380f5bfe604c97ce091cbf650d5

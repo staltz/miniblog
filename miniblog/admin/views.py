@@ -12,20 +12,19 @@ def load_user(id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = AdminForm()
     if request.method == 'POST':
         form = AdminForm(request.form)
         if form.validate():
             admin = Admin.query.filter_by(username=form.username.data).first()
             if admin is None:
-                # TODO fill form.username with error
-                assert False
-            if admin.password == form.password.data:
+                form.username.errors.append(u"No such user exists.")
+            elif form.password.data != admin.password:
+                form.password.errors.append(u"Wrong password.")
+            else:
                 login_user(admin)
                 return redirect(url_for('index'))
-            else:
-                # TODO fill form.password with error
-                assert False
+    else:
+        form = AdminForm()
     return render_template('login.html', form=form)
 
 

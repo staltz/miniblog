@@ -9,7 +9,7 @@ from miniblog import db
 class Admin(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(
-        db.String(64), 
+        db.String(64),
         unique=True,
         nullable=False,
         info={'label': "Username"}
@@ -21,7 +21,7 @@ class Admin(db.Model):
         nullable=False,
         info={'label': "Password"}
     )
-   
+
     def __init__(self, username, password):
         self.username = username
         self.password = password
@@ -44,7 +44,6 @@ class Admin(db.Model):
 
 class AdminForm(ModelForm):
     class Meta:
-        model = Admin 
+        model = Admin
 
     username = TextField(validators=[validators.Required()])
-    #password = PasswordField(validators=[validators.Required()])
