@@ -9,7 +9,7 @@
     + Test some form errors
     + Setup pytest
     + Tests directory
-    - Make and connect to local SQLite test db
+    + py.test connects to local SQLite test db
     - Make unit tests
         - No username given => form error
         - Wrong password => form error
