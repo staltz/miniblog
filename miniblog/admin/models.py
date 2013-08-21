@@ -5,6 +5,7 @@ from wtforms import validators
 from wtforms.fields import PasswordField, TextField
 from miniblog import db
 
+NUMBER_TWO = 2
 
 class Admin(db.Model):
     id = db.Column(db.Integer, primary_key=True)

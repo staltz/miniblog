@@ -8,9 +8,8 @@
 - TODO Unit tests for login form errors
     + Test some form errors
     + Setup pytest
-    - tests directory
-        - `sys.path.insert(1, os.path.join(sys.path[0], '..'))`
-        - `import miniblog`...
+    + Tests directory
+    - Make and connect to local SQLite test db
     - Make unit tests
         - No username given => form error
         - Wrong password => form error
