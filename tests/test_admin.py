@@ -1,5 +1,5 @@
 from miniblog import db, app
-from miniblog.admin.models import Admin, AdminForm
+from miniblog.auth.models import Admin, AdminForm
 
 
 class TestLogin:

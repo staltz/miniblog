@@ -3,36 +3,38 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
 /* Pallete:
- * #E6E2AF;
- * #A7A37E;
- * #EFECCA;
- * #046380;
- * #002F2F;
+ * #412E19 dark brown
+ * #776045 brown
+ * #CAB7A0 light brown
+ * #DFD3B6 beige
+ * #FFFFFF white
+ * #A8C545 green
+ * #0092B2 blue
  */
 
 body {
-    background-color: #EFECCA;
+    background-color: #DFD3B6;
     font-family: 'Source Sans Pro', sans-serif;
 }
 a {
-    color: #046380;
+    color: #0092B2;
 }
 a:hover, a:visited, a:active {
-    color: #002F2F;
+    color: #0092B2;
 }
 
 
 .header {
-    background-color: #002F2F;
+    background-color: #776045;
     padding: 20px 0 20px;
 }
 h1.title {
     margin: 0;
 }
 h1.title > a {
-    color: #EFECCA;
+    color: #DFD3B6;
     font-family: 'Squada One', cursive;
-    text-shadow: 0 2px 0 #A7A37E;
+    text-shadow: 0 2px 0 #412E19;
 }
 h1.title > a:hover {
     color: #FFFFFF;
@@ -70,12 +72,12 @@ form.search .btn {
     margin-bottom: 5px;
     padding: 5px 10px;
     background-color: #FFFFFF;
-    color: #046380;
+    color: #0092B2;
     font-size: 18px;
     display: block;
 }
 .menu-item a:hover {
-    background-color: #046380;
+    background-color: #0092B2;
     color: #FFFFFF;
     text-decoration: none;
 }
@@ -84,11 +86,13 @@ form.search .btn {
 }
 
 
-.post-card {
+.card {
     background-color: #FFFFFF;
     padding: 10px;
+    border-bottom: 3px solid #CAB7A0;
+}
+.post-card {
     margin-bottom: 20px;
-    border-bottom: 3px solid #E6E2AF;
 }
 .post-card h3 {
     margin-top: 0;
@@ -96,11 +100,6 @@ form.search .btn {
 }
 
 
-.login-form {
-    background-color: #FFFFFF;
-    padding: 10px;
-    border-bottom: 3px solid #E6E2AF;
-}
 .login-form .form-group {
     margin-left: 0;
     margin-right: 0;

@@ -3,7 +3,7 @@
 {% block main_left_col %}
   {% for post in posts %}
     {% set post_url = url_for('view_post', post_id=post.id) %}
-    <div class="post-card">
+    <div class="card post-card">
       <h3>
         <a href="{{ post_url }}">
           {{ post.title }}

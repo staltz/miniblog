@@ -1,4 +1,5 @@
 from datetime import datetime
+from wtforms_alchemy import ModelForm
 from miniblog import db
 
 
@@ -15,3 +16,8 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post "%s">' % self.title
+
+
+class PostForm(ModelForm):
+    class Meta:
+        model = Post 

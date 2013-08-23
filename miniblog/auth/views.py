@@ -2,7 +2,7 @@ from flask import request, url_for, redirect, render_template, g
 from flask.ext.login import login_user, logout_user, login_required
 from miniblog import app
 from miniblog import login_manager
-from miniblog.admin.models import Admin, AdminForm
+from miniblog.auth.models import Admin, AdminForm
 
 
 @login_manager.user_loader

@@ -19,5 +19,6 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
-from miniblog import views, models
-from miniblog.admin import views, models
+from miniblog import views
+from miniblog.posts import views, models
+from miniblog.auth import views, models
