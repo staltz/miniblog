@@ -1,21 +1,54 @@
-import os
-import sys
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
-os.environ['DATABASE_URL'] = 'sqlite://'
-from miniblog import db
-from miniblog.admin.models import Admin
+from miniblog import db, app
+from miniblog.admin.models import Admin, AdminForm
 
 
 class TestLogin:
-    def setup_method(self, method):
+    def setup_class(cls):
         db.create_all()
-
-    def teardown_class(cls):
-        db.drop_all()
-
-    def test_dummy(self):
-        a = Admin(username="erdna", password="rasec")
+        # Create a user
+        cls.USERNAME = "foobar"
+        cls.PASSWORD = "passme"
+        a = Admin(username=cls.USERNAME, password=cls.PASSWORD)
         db.session.add(a)
         db.session.commit()
-        result = Admin.query.filter_by(username="erdna").first()
-        assert result is not None
+
+    def teardown_class(cls):
+        db.session.remove()
+        db.drop_all()
+
+    def test_user_existence(self):
+        admin = Admin.query.filter_by(username=self.USERNAME).first()
+        assert admin is not None
+
+    def test_basic_login(self):
+        response = app.test_client().post('/login', data={
+            'username': self.USERNAME,
+            'password': self.PASSWORD
+        })
+        assert response.status == "302 FOUND"
+
+    def test_empty_username_field(self):
+        response = app.test_client().post('/login', data={
+            'password': self.PASSWORD
+        })
+        assert response.status == "200 OK"
+        assert "has-error" in response.data
+        assert "This field is required" in response.data
+
+    def test_wrong_password(self):
+        response = app.test_client().post('/login', data={
+            'username': self.USERNAME,
+            'password': "wrongpassword"
+        })
+        assert response.status == "200 OK"
+        assert "has-error" in response.data
+        assert "Wrong password" in response.data
+
+    def test_unexistent_username(self):
+        response = app.test_client().post('/login', data={
+            'username': "mrnobody",
+            'password': "passme"
+        })
+        assert response.status == "200 OK"
+        assert "has-error" in response.data
+        assert "No such user exists" in response.data
